@@ -1,59 +1,52 @@
-﻿using Asap.Library.Model.Base;
+﻿using Asap.Library.Model;
 using System;
 
-namespace Asap.Library.Model.OGU
+namespace Asap.Library.Model
 {
-    [Serializable]
-    public class USERQueryCondition
-    {
-        public string FIRST_Name { get; set; }
-        public string LAST_Name { get; set; }
-        public string LOGON_ID { get; set; }
-        public string Function_Type { get; set; }
-    }
     
+
     /// <summary>
     /// USER 扩展表[通常用作查询]
     /// </summary>
     [Serializable]
-    public class USER
+    public class User
     {
-        public string USER_ID { get; set; }
+        public string UserID { get; set; }
 
 
-        public string FIRST_Name { get; set; }
+        public string FirstName { get; set; }
 
 
-        public string LAST_Name { get; set; }
+        public string LastName { get; set; }
 
 
-        public string DISPLAY_NAME { get; set; }
+        public string DisplayName { get; set; }
 
 
-        public string LOGON_ID { get; set; }
+        public string Login_ID { get; set; }
 
 
-        public string USER_PWD { get; set; }
+        public string Password { get; set; }
 
 
-        public string EMAIL { get; set; }
+        public string Email { get; set; }
 
 
-        public DateTime CREATE_TIME { get; set; }
+        public DateTime CreateTime { get; set; }
 
 
-        public string MODIFIER_ID { get; set; }
+        public string ModifierID { get; set; }
 
 
-        public DateTime MODIFY_TIME { get; set; }
+        public DateTime ModifyTime { get; set; }
 
-        public int IN_AD { get; set; }
+        public bool IsADAccount { get; set; }
 
-        
+
     }
 
     [Serializable]
-    public sealed class USERCollection : EditableDataObjectCollectionBase<USER>
+    public sealed class UserCollection : EditableDataObjectCollectionBase<User>
     {
     }
 }

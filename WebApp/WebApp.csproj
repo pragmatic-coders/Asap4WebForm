@@ -125,6 +125,7 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="readme.txt" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -266,6 +267,16 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\App.Library\App.Library.csproj">
+      <Project>{dcc244d4-1178-4faf-a28d-1b4a1d9b1d75}</Project>
+      <Name>App.Library</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Asap.Library\Asap.Library.csproj">
+      <Project>{43f67d75-ab5f-4c8d-b705-6b17ff6faefd}</Project>
+      <Name>Asap.Library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

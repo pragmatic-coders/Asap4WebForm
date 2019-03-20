@@ -31,7 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -43,16 +51,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\CommonConfig.cs" />
+    <Compile Include="Core\Configs.cs" />
+    <Compile Include="Core\DataClass.cs" />
+    <Compile Include="Core\DataContext.cs" />
+    <Compile Include="Core\Enums.cs" />
     <Compile Include="Core\ExceptionHelper.cs" />
     <Compile Include="Core\IXmlSerilizableList.cs" />
     <Compile Include="Core\NonXElementSerializedFieldsAttribute.cs" />
+    <Compile Include="Core\OguCollections.cs" />
+    <Compile Include="Core\SupportLanguage.cs" />
     <Compile Include="Core\SystemSupportException.cs" />
     <Compile Include="Core\XElementSerializedAttribute.cs" />
-    <Compile Include="Model\Base\DataObjectCollectionBase.cs" />
+    <Compile Include="Extension\SystemExtension.cs" />
+    <Compile Include="Interface\GlobalServices.cs" />
+    <Compile Include="Interface\IBasePagedListVM.cs" />
+    <Compile Include="Interface\ISearcher.cs" />
+    <Compile Include="Interface\ISessionService.cs" />
+    <Compile Include="Interface\ITreeData.cs" />
+    <Compile Include="Interface\OguDefine.cs" />
+    <Compile Include="Interface\PermissionDefine.cs" />
+    <Compile Include="Model\App\Application.cs" />
+    <Compile Include="Model\App\Applinks.cs" />
+    <Compile Include="Model\App\AppLogOffCallBackUrl.cs" />
+    <Compile Include="Model\App\AppMenu.cs" />
+    <Compile Include="Model\App\AppModule.cs" />
+    <Compile Include="Model\Base\BasePoco.cs" />
+    <Compile Include="Model\Base\TopBasePoco.cs" />
+    <Compile Include="Model\OGU\LogonUser.cs" />
+    <Compile Include="Model\OGU\OguFactory.cs" />
+    <Compile Include="Model\OGU\Permission.cs" />
     <Compile Include="Model\OGU\LogOnIdentity.cs" />
     <Compile Include="Model\OGU\Role.cs" />
+    <Compile Include="Model\OGU\RolePermission.cs" />
+    <Compile Include="Model\OGU\Scope.cs" />
     <Compile Include="Model\OGU\User.cs" />
-    <Compile Include="Model\OGU\UserRoles.cs" />
+    <Compile Include="Model\OGU\UserRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resource.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -67,7 +101,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Interface\" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cache\" />
+    <Folder Include="ViewModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
